@@ -20,6 +20,13 @@
   }: let
     inherit (nixpkgs.lib) mapAttrs' nameValuePair;
 
+    supportedSystems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
+    forEachSupportedSystem = f:
+      nixpkgs.lib.genAttrs supportedSystems (system:
+        f {
+          pkgs = import nixpkgs {inherit system;};
+        });
+
     ppVer = builtins.replaceStrings ["."] ["_"];
     docs = pkgs:
       (mapAttrs'
@@ -84,6 +91,20 @@
           // (docs prev));
         default = self.overlays.betterfox;
       };
+
+      devShells = forEachSupportedSystem ({pkgs}: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            cachix
+            lorri
+            nil
+            statix
+            vulnix
+            haskellPackages.dhall-nix
+            python39Packages.requests
+          ];
+        };
+      });
 
       lib.betterfox = {
         supportedVersions = builtins.attrNames self.lib.betterfox.extracted;
