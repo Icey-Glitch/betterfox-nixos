@@ -2,7 +2,7 @@
   description = "Utilities to use betterfox's user.js for Firefox";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/release-23.05";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
