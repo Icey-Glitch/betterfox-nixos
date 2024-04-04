@@ -34,6 +34,7 @@
           else {};
       };
     });
+
   settingOption = setting:
     nameValuePair setting.name
     (lib.mkOption {
@@ -65,6 +66,7 @@
           else {};
       };
     });
+
   subsectionOption = name: sub:
     lib.mkOption {
       description = "${name}: ${sub.meta.title}\n${sub.meta.description}";
@@ -96,6 +98,7 @@
           else {};
       };
     });
+
   sectionOption = name: section:
     lib.mkOption {
       description = "${name}: ${section.meta.title}\n${section.meta.description}";
