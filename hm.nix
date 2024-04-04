@@ -7,7 +7,7 @@ versions: extracted: {
 
   cfg = config.programs.firefox;
   version = "${config.programs.firefox.package.version}";
-  ext = extracted."${cfg.betterfox.version}";
+  ext = if cfg.betterfox.enable && extracted ? "${cfg.betterfox.version}" then extracted."${cfg.betterfox.version}" else {};
 in {
   options.programs.firefox = {
     betterfox = {
