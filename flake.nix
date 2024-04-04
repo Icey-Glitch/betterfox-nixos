@@ -98,6 +98,7 @@
             cachix
             lorri
             nil
+            nixd
             statix
             vulnix
             haskellPackages.dhall-nix
