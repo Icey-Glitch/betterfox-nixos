@@ -4,9 +4,7 @@
       "title": "FASTFOX",
       "description": "",
       "links": {},
-      "parrots": [
-        ""
-      ]
+      "parrots": []
     },
     "default": {
       "meta": {
@@ -246,9 +244,7 @@
       "title": "SECUREFOX",
       "description": "",
       "links": {},
-      "parrots": [
-        ""
-      ]
+      "parrots": []
     },
     "tracking-protection": {
       "meta": {
@@ -765,9 +761,7 @@
       "title": "PESKYFOX",
       "description": "",
       "links": {},
-      "parrots": [
-        ""
-      ]
+      "parrots": []
     },
     "mozilla-ui": {
       "meta": {
@@ -1052,9 +1046,7 @@
       "title": "SMOOTHFOX",
       "description": "",
       "links": {},
-      "parrots": [
-        ""
-      ]
+      "parrots": []
     }
   }
 }

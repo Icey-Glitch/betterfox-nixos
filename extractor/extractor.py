@@ -31,7 +31,7 @@ def ensure_subsection():
 def start_new_section(name):
     global current_section, current_subsection
     current_section = format_name(name)
-    sections[current_section] = {"meta": {"title": name, "description": "", "links": {}, "parrots": [""]}}
+    sections[current_section] = {"meta": {"title": name, "description": "", "links": {}, "parrots": []}}
     current_subsection = None
 
 def start_new_subsection(name):
@@ -64,3 +64,4 @@ with open("temp_user.js", "r", encoding="utf-8") as file:
 
 json_output = json.dumps(sections, indent=2)
 print(json_output)
+
